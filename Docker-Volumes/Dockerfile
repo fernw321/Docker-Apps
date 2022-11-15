@@ -16,5 +16,9 @@ COPY . .
 # Expose internal port 80
 EXPOSE 80
 
+
+# The container will map to the working directory's path
+VOLUME [ "/app/feedback" ]
+
 # Container runs this code
 CMD [ "node", "server.js" ]

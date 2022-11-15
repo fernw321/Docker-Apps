@@ -36,7 +36,10 @@ app.post('/create', async (req, res) => {
     if (exists) {
       res.redirect('/exists');
     } else {
-      await fs.rename(tempFilePath, finalFilePath);
+      // change fs.rename to fs.copyfile to fix the cross-device link error
+      await fs.copyFile(tempFilePath, finalFilePath);
+      // Manually deletes the temp
+      await fs.unlink(tempFilePath)
       res.redirect('/');
     }
   });
