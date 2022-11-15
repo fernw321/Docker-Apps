@@ -18,7 +18,11 @@ EXPOSE 80
 
 
 # The container will map to the working directory's path
-VOLUME [ "/app/feedback" ]
+# This is an anonymous volume
+# Anonymous volumes do not survive container shutdown; named volumes do
+# VOLUME [ "/app/feedback" ]
+
+
 
 # Container runs this code
 CMD [ "node", "server.js" ]
