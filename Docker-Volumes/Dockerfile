@@ -25,4 +25,6 @@ EXPOSE 80
 
 
 # Container runs this code
-CMD [ "node", "server.js" ]
+# Uses NPM to use the start command which then uses the nodemon devDependency
+# Nodemon reflects changes in the server.js file in realtime
+CMD [ "npm", "start" ]
