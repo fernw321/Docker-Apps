@@ -47,4 +47,5 @@ console.log('TEST 1');
   });
 });
 
-app.listen(80);
+// The global object provided by Node; We can access the internal port number
+app.listen(process.env.PORT);

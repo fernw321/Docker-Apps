@@ -13,8 +13,12 @@ RUN npm install
 # Copy over all the remaining files into /app
 COPY . .
 
+# Add the global environment variable; can also be added on the CLI
+# No need for hardcoding
+ENV PORT 80
+
 # Expose internal port 80
-EXPOSE 80
+EXPOSE $PORT
 
 
 # The container will map to the working directory's path
