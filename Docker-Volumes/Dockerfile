@@ -11,7 +11,7 @@ COPY package.json .
 RUN npm install
 
 # Copy over all the remaining files into /app
-COPY . .
+# COPY . .
 
 # Expose internal port 80
 EXPOSE 80
